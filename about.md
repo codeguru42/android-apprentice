@@ -4,12 +4,11 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+I have been developing Android apps since 2012. I have published an
+apps on [Google Play][1] and on [Amazon][2]. I actively contribute
+to [Stack Overflow][3] and can occassionally be found in [Room 15][4].
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jekyll" %} /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+[1]:https://play.google.com/store/apps/details?id=bbct.android.premium
+[2]:https://www.amazon.com/codeguru-Baseball-Card-Tracker-Premium/dp/B00C42E67U
+[3]:https://stackoverflow.com/users/1440565/code-apprentice
+[4]:http://chat.stackoverflow.com/rooms/15/android
