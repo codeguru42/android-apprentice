@@ -63,6 +63,42 @@ Now we need to add a dependency for Robolectric to our project. Add the followin
 Write the Test
 --
 
+Finally, we can start writing tests. We will use the style of JUnit 4 tests starting with something simple. The first test will create an instance of `MainActivity` and assert that it was successfully created. Here is the code for [`ActivityUnitTest`][8]:
+
+```java
+package codeguru.robolectricexamples;
+
+import android.app.Activity;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.Robolectric;
+import org.robolectric.RobolectricTestRunner;
+import org.robolectric.annotation.Config;
+
+import static org.hamcrest.core.IsNull.notNullValue;
+import static org.junit.Assert.assertThat;
+
+@RunWith(RobolectricTestRunner.class)
+@Config(constants = BuildConfig.class)
+public class ActivityUnitTest {
+    @Test
+    public void testActivity() {
+        Activity activity = Robolectric.setupActivity(MainActivity.class);
+        assertThat(activity, notNullValue());
+    }
+}
+```
+
+Breakdown
+==
+
+1. All Robolectric-based tests must be run with a custom test runner provided by the Robolectric API. We tell JUnit to use `RobolectricTestRunner` with the `@RunWith` annotation.
+
+2. The `@Config` annotation tells Robolectric where to find `AndroidManifest.xml` and the Android resources in the app project. The easiest way to do this is by passing in `BuildConfig.class` as the `constants` property of the `@Config` annotation. Under the hood, Robolectric uses the values in `BuildConfig` to locate the required files.
+
+3. We write the test in a method annotated with `@Test`. First, we call `Robolectric.setupActivity(MainActivity.class)` to create the activity. Then we assert that the returned reference is not null. I decided to use Hamcrest-style assertions here. Alternatively, you can use `assertNotNull()` from JUnit.
+
 [1]:https://github.com/codeguru42/robolectric-examples
 [2]:https://github.com/codeguru42/robolectric-examples/tree/activity-test
 [3]:https://github.com/codeguru42/robolectric-examples/blob/activity-test/activity-test/src/main/res/layout/activity_main.xml
@@ -70,3 +106,4 @@ Write the Test
 [5]:http://robolectric.org/
 [6]:https://github.com/codeguru42/robolectric-examples/blob/activity-test/activity-test/build.gradle#L22-L32
 [7]:https://github.com/codeguru42/robolectric-examples/blob/activity-test/activity-test/build.gradle
+[8]:https://github.com/codeguru42/robolectric-examples/blob/activity-test/activity-test/src/test/java/codeguru/robolectricexamples/ActivityUnitTest.java
