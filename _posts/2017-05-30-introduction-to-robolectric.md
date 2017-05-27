@@ -3,12 +3,27 @@ layout: post
 title:  "Introduction to Robolectric"
 tags: android testing unit-testing robolectric
 ---
-Introduction
-==
 
 This is the first in a series of articles about using [Robolectric][5] for unit testing Android code. I recently started using this powerful testing library so that I can run tests locally on my development machine. Such local unit tests do not replace instrumented tests on a device or emulator. However, they are very useful while developing individual components for an Android app.
 
 The source code for all of the apps in this series of articles can be found on [GitHub][1]. In this article, we will create a simple Android app and configure unit testing in Android Studio using Robolectric. The final version of this project is at the [`activity-test` tag][2]. See the `activity-test` subdirectory for the Android Sutdio module used in this article.
+
+Prerequisites
+==
+
+In this article, I assume that you are already familiar with Android development and unit testing. You should be comfortable with Android Studio, the Android API (especially Activities), and JUnit 4. To review these tools, see the following links:
+
+* [Android Studio][14]
+* [Android API Training][15]
+* [Android API Guides][16]
+* [Android Activities][17]
+* [JUnit 4][18]
+
+[14]:https://developer.android.com/studio/index.html
+[15]:https://developer.android.com/training/index.html
+[16]:https://developer.android.com/guide/index.html
+[17]:https://developer.android.com/guide/components/activities.html
+[18]:http://junit.org/junit4/
 
 Create an Activity
 ==
