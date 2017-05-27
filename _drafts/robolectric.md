@@ -113,6 +113,6 @@ Robolectric eases the pain of testing Android apps. It allows us to write unit t
 [7]:https://github.com/codeguru42/robolectric-examples/blob/activity-test/activity-test/build.gradle
 [8]:https://github.com/codeguru42/robolectric-examples/blob/activity-test/activity-test/src/test/java/codeguru/robolectricexamples/ActivityUnitTest.java
 [9]:http://hamcrest.org/JavaHamcrest/
-[10]:http://junit.org/junit4/javadoc/latest/org/junit/Assert.html#assertThat(T, org.hamcrest.Matcher)
+[10]:http://junit.org/junit4/javadoc/latest/org/junit/Assert.html#assertThat(T,%20org.hamcrest.Matcher)
 [11]:http://junit.org/junit4/javadoc/latest/org/junit/Assert.html#assertNotNull(java.lang.Object)
 [12]:https://en.wikipedia.org/wiki/Fluent_interface
