@@ -55,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
 Add Dependency for Robolectric
 --
 
+Now we need to add a dependency for Robolectric to our project. Add the following two lines to the [`dependencies`][6] block of [`build.gradle`][7]:
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.robolectric:robolectric:3.3.2'
+
 Write the Test
 --
 
@@ -63,3 +68,5 @@ Write the Test
 [3]:https://github.com/codeguru42/robolectric-examples/blob/activity-test/activity-test/src/main/res/layout/activity_main.xml
 [4]:https://github.com/codeguru42/robolectric-examples/blob/activity-test/activity-test/src/main/java/codeguru/robolectricexamples/MainActivity.java
 [5]:http://robolectric.org/
+[6]:https://github.com/codeguru42/robolectric-examples/blob/activity-test/activity-test/build.gradle#L22-L32
+[7]:https://github.com/codeguru42/robolectric-examples/blob/activity-test/activity-test/build.gradle
