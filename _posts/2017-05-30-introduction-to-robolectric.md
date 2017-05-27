@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Introduction to Robolectric -- Draft"
+title:  "Introduction to Robolectric"
 tags: android testing unit-testing robolectric
 ---
 Introduction
