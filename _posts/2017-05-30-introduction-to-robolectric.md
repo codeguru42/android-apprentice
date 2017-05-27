@@ -99,7 +99,7 @@ Breakdown
 
 3. We write the test in a method annotated with `@Test`. First, we call `Robolectric.setupActivity(MainActivity.class)` to create the activity. Then we assert that the returned reference is not null. I decided to use [`assertThat()`][10] which uses a [Hamcrest matcher][9]. Alternatively, you can use [`assertNotNull()`][11]. Using Hamcrest matchers provides a [fluent syntax][12] which is much easer to read and write than the traditional JUnit assertions.
 
-A Second Test
+[A Second Test][13]
 ==
 
 Let's write one more test to make sure the correct text is displayed.
@@ -133,3 +133,4 @@ Robolectric eases the pain of testing Android apps. It allows us to write unit t
 [10]:http://junit.org/junit4/javadoc/latest/org/junit/Assert.html#assertThat(T,%20org.hamcrest.Matcher)
 [11]:http://junit.org/junit4/javadoc/latest/org/junit/Assert.html#assertNotNull(java.lang.Object)
 [12]:https://en.wikipedia.org/wiki/Fluent_interface
+[13]:https://github.com/codeguru42/robolectric-examples/blob/activity-test/activity-test/src/test/java/codeguru/robolectricexamples/ActivityUnitTest.java#L24-L30
