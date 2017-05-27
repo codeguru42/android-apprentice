@@ -85,7 +85,7 @@ public class ActivityUnitTest {
     @Test
     public void testActivity() {
         Activity activity = Robolectric.setupActivity(MainActivity.class);
-        assertThat(activity, notNullValue());
+        assertNotNull(activity);
     }
 }
 ```
@@ -97,7 +97,7 @@ Breakdown
 
 2. The `@Config` annotation tells Robolectric where to find `AndroidManifest.xml` and the Android resources in the app project. The easiest way to do this is by passing in `BuildConfig.class` as the `constants` property of the `@Config` annotation. Under the hood, Robolectric uses the values in `BuildConfig` to locate the required files.
 
-3. We write the test in a method annotated with `@Test`. First, we call `Robolectric.setupActivity(MainActivity.class)` to create the activity. Then we assert that the returned reference is not null. I decided to use [`assertThat()`][10] which uses a [Hamcrest matcher][9]. Alternatively, you can use [`assertNotNull()`][11]. Using Hamcrest matchers provides a [fluent syntax][12] which is much easer to read and write than the traditional JUnit assertions.
+3. We write the test in a method annotated with `@Test`. First, we call `Robolectric.setupActivity(MainActivity.class)` to create the activity. Then we assert that the returned reference is not null.
 
 [A Second Test][13]
 ==
