@@ -20,11 +20,13 @@ First we will create a simple activity to use for our first test. I will assume 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/hello_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello" />
@@ -97,6 +99,23 @@ Breakdown
 2. The `@Config` annotation tells Robolectric where to find `AndroidManifest.xml` and the Android resources in the app project. The easiest way to do this is by passing in `BuildConfig.class` as the `constants` property of the `@Config` annotation. Under the hood, Robolectric uses the values in `BuildConfig` to locate the required files.
 
 3. We write the test in a method annotated with `@Test`. First, we call `Robolectric.setupActivity(MainActivity.class)` to create the activity. Then we assert that the returned reference is not null. I decided to use [`assertThat()`][10] which uses a [Hamcrest matcher][9]. Alternatively, you can use [`assertNotNull()`][11]. Using Hamcrest matchers provides a [fluent syntax][12] which is much easer to read and write than the traditional JUnit assertions.
+
+A Second Test
+--
+
+Let's write one more test to make sure the correct test is displayed.
+
+```java
+@Test
+public void testTextView() throws Exception {
+    Activity activity = Robolectric.setupActivity(MainActivity.class);
+    TextView hello = (TextView) activity.findViewById(R.id.hello_text);
+    assertNotNull(hello);
+    assertEquals("Hello, World", hello.getText().toString());
+}
+```
+
+Here we get the `TextView` with id `hello_text` and assert that it contains the expected message.
 
 Conclusion
 --
