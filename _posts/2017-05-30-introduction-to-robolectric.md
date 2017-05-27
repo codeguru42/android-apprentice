@@ -4,22 +4,21 @@ title:  "Introduction to Robolectric"
 tags: android testing unit-testing robolectric
 ---
 Introduction
---
+==
 
 This is the first in a series of articles about using [Robolectric][5] for unit testing Android code. I recently started using this powerful testing library so that I can run tests locally on my development machine. Such local unit tests do not replace instrumented tests on a device or emulator. However, they are very useful while developing individual components for an Android app.
 
 The source code for all of the apps in this series of articles can be found on [GitHub][1]. In this article, we will create a simple Android app and configure unit testing in Android Studio using Robolectric. The final version of this project is at the [`activity-test` tag][2]. See the `activity-test` subdirectory for the Android Sutdio module used in this article.
 
 Create an Activity
---
+==
 
 First we will create a simple activity to use for our first test. I will assume that you know how to create the appropriate files in Android Studio and only show the code here.
 
 [Layout][3]
-==
+--
 
 ```xml
-<?xml version="1.0" encoding="utf-8"?>
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -35,7 +34,7 @@ First we will create a simple activity to use for our first test. I will assume 
 ```
 
 [Java Code][4]
-==
+--
 
 ```java
 package codeguru.robolectricexamples;
@@ -54,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 Add Dependency for Robolectric
---
+==
 
 Now we need to add a dependency for Robolectric to our project. Add the following two lines to the [`dependencies`][6] block of [`build.gradle`][7]:
 
@@ -62,7 +61,7 @@ Now we need to add a dependency for Robolectric to our project. Add the followin
     testCompile 'org.robolectric:robolectric:3.3.2'
 
 Write the Test
---
+==
 
 Finally, we can start writing tests. We will use the style of JUnit 4 tests starting with something simple. The first test will create an instance of `MainActivity` and assert that it was successfully created. Here is the code for [`ActivityUnitTest`][8]:
 
@@ -92,7 +91,7 @@ public class ActivityUnitTest {
 ```
 
 Breakdown
-==
+--
 
 1. All Robolectric-based tests must be run with a custom test runner provided by the Robolectric API. We tell JUnit to use `RobolectricTestRunner` with the `@RunWith` annotation.
 
@@ -101,9 +100,9 @@ Breakdown
 3. We write the test in a method annotated with `@Test`. First, we call `Robolectric.setupActivity(MainActivity.class)` to create the activity. Then we assert that the returned reference is not null. I decided to use [`assertThat()`][10] which uses a [Hamcrest matcher][9]. Alternatively, you can use [`assertNotNull()`][11]. Using Hamcrest matchers provides a [fluent syntax][12] which is much easer to read and write than the traditional JUnit assertions.
 
 A Second Test
---
+==
 
-Let's write one more test to make sure the correct test is displayed.
+Let's write one more test to make sure the correct text is displayed.
 
 ```java
 @Test
@@ -118,7 +117,7 @@ public void testTextView() throws Exception {
 Here we get the `TextView` with id `hello_text` and assert that it contains the expected message.
 
 Conclusion
---
+==
 
 Robolectric eases the pain of testing Android apps. It allows us to write unit tests which do not have to be deployed to a device thereby decreasing the amount of time needed to run these tests.
 
