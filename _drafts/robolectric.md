@@ -99,6 +99,11 @@ Breakdown
 
 3. We write the test in a method annotated with `@Test`. First, we call `Robolectric.setupActivity(MainActivity.class)` to create the activity. Then we assert that the returned reference is not null. I decided to use [`assertThat()`][10] which uses a [Hamcrest matcher][9]. Alternatively, you can use [`assertNotNull()`][11]. Using Hamcrest matchers provides a [fluent syntax][12] which is much easer to read and write than the traditional JUnit assertions.
 
+Conclusion
+--
+
+Robolectric eases the pain of testing Android apps. It allows us to write unit tests which do not have to be deployed to a device thereby decreasing the amount of time needed to run these tests.
+
 [1]:https://github.com/codeguru42/robolectric-examples
 [2]:https://github.com/codeguru42/robolectric-examples/tree/activity-test
 [3]:https://github.com/codeguru42/robolectric-examples/blob/activity-test/activity-test/src/main/res/layout/activity_main.xml
