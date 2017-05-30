@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 I have been developing Android apps since 2012. I have published an
-apps on [Google Play][1] and on [Amazon][2]. I actively contribute
+app on [Google Play][1] and on [Amazon][2]. I actively contribute
 to [Stack Overflow][3] and can occassionally be found in [Room 15][4].
 
 [1]:https://play.google.com/store/apps/details?id=bbct.android.premium

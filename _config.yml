@@ -17,7 +17,7 @@ title: Android Apprentice
 email: apprentice@androidapprentice.com
 description: > # this means to ignore newlines until "baseurl:"
   I am an Android developer and Stack Overflow contributor.
-  This site contains some of lessons I have learned while
+  This site contains some of the lessons I have learned while
   working with the Android API and development tools.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
