@@ -22,6 +22,85 @@ In this article, I assume that you are already familiar with Android development
 Create the App to Test
 ==
 
+The app we test in this article is very similar to the one tested in the [previous article][9] in this series. The difference is that we will use a `Fragment` to contain the UI components. As before, I assume you know how to create the appropriate classes and XML layout files in Android Studio. Here is the code:
+
+[Java Code For `MainActivity`][10]
+--
+
+```java
+package codeguru.fragmenttest;
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+}
+```
+
+[XML layout for `MainActivity`][11]
+--
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment"
+    android:name="codeguru.fragmenttest.MainFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:layout="@layout/fragment_main" />
+```
+
+[Java Code for `MainFragment`][12]
+--
+
+```java
+package codeguru.fragmenttest;
+
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+public class MainFragment extends Fragment {
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_main, container, false);
+    }
+
+}
+```
+
+[XML layout for `MainFragment`][13]
+--
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/hello_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello" />
+
+</LinearLayout>
+```
+
 Write the Tests
 ==
 
@@ -37,3 +116,7 @@ Conclusion
 [7]:https://developer.android.com/guide/components/activities.html
 [8]:http://junit.org/junit4/
 [9]:http://androidapprentice.com/2017/05/30/introduction-to-robolectric.html
+[10]:https://github.com/codeguru42/robolectric-examples/blob/fragment-test/fragment-test/src/main/java/codeguru/fragmenttest/MainActivity.java
+[11]:https://github.com/codeguru42/robolectric-examples/blob/fragment-test/fragment-test/src/main/res/layout/activity_main.xml
+[12]:https://github.com/codeguru42/robolectric-examples/blob/fragment-test/fragment-test/src/main/java/codeguru/fragmenttest/MainFragment.java
+[13]:https://github.com/codeguru42/robolectric-examples/blob/fragment-test/fragment-test/src/main/res/layout/fragment_main.xml
