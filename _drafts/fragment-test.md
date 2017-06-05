@@ -9,6 +9,14 @@ In this article, we will learn how to write unit tests for a `Fragment` subclass
 Prerequisites
 ==
 
+In this article, I assume that you are already familiar with Android development and unit testing. You should be comfortable with Android Studio, the Android API (especially Activities and Fragments), and JUnit 4. To review these tools, see the following links:
+
+* [Android Studio][4]
+* [Android API Training][5]
+* [Android API Guides][6]
+* [Android Activities][7]
+* [JUnit 4][8]
+
 Create the App to Test
 ==
 
@@ -21,3 +29,8 @@ Conclusion
 [1]:http://robolectric.org/
 [2]:https://github.com/codeguru42/robolectric-examples
 [3]:https://github.com/codeguru42/robolectric-examples/tree/fragment-test
+[4]:https://developer.android.com/studio/index.html
+[5]:https://developer.android.com/training/index.html
+[6]:https://developer.android.com/guide/index.html
+[7]:https://developer.android.com/guide/components/activities.html
+[8]:http://junit.org/junit4/
