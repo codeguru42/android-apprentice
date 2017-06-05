@@ -171,6 +171,8 @@ Here we check that the sole `TextView` in our fragment contains the message `"He
 Conclusion
 ==
 
+As you can see, testing a fragment is not much more complicated than testing an activity. The beauty of using Robolectric is that you can test the fragment directly. You do not need to create an activity to host the fragment. Instead, Robolectric takes care of these details under the hood.
+
 [1]:http://robolectric.org/
 [2]:https://github.com/codeguru42/robolectric-examples
 [3]:https://github.com/codeguru42/robolectric-examples/tree/fragment-test
