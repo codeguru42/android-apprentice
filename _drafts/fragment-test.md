@@ -4,7 +4,9 @@ title:  "Testing Fragments with Robolectric"
 tags: android testing unit-testing robolectric
 ---
 
-In this article, we will learn how to write unit tests for a `Fragment` subclass. This is a continuation of a series of articles about testing with [Robolectric][1]. The source code for all of the apps in this series can be found on [GitHub][2]. The final version of the Android Studio module used in this article is in the `fragment-test` subdirectory at the [`fragment-test` tag][3].
+In this article, we will learn how to write unit tests for a `Fragment` subclass. This is a continuation of a series of articles about testing with [Robolectric][1]. If you want to learn about the basics of testing with Robolectric, read the [first article][9] in this series.
+
+The source code for all of the apps in this series can be found on [GitHub][2]. The final version of the Android Studio module used in this article is in the `fragment-test` subdirectory at the [`fragment-test` tag][3].
 
 Prerequisites
 ==
@@ -34,3 +36,4 @@ Conclusion
 [6]:https://developer.android.com/guide/index.html
 [7]:https://developer.android.com/guide/components/activities.html
 [8]:http://junit.org/junit4/
+[9]:http://androidapprentice.com/2017/05/30/introduction-to-robolectric.html
