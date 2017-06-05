@@ -104,6 +104,70 @@ public class MainFragment extends Fragment {
 Write the Tests
 ==
 
+First we will write a test that initializes an instance of `MainFragment`.
+
+Add Dependencies
+--
+
+As before, we need to add several dependencies to the `build.gradle` file:
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.robolectric:robolectric:3.3.2'
+    testCompile "org.robolectric:shadows-support-v4:3.3.2"
+
+Note the new `shadows-support-v4` dependency. This is because we use Fragment from the Android Support Library. If you are using native Fragments, you do not need this package from Robolectric.
+
+Create a Test Class
+--
+
+Since this is Java, we need a class for our test methods. We use annotations to tell JUnit 4 how to run the class and its methods.
+
+```java
+@RunWith(RobolectricTestRunner.class)
+@Config(constants = BuildConfig.class)
+public class FragmentUnitTest {
+}
+```
+
+As with our Activity tests, we need to tell JUnit 4 to use `RobolectricTestRunner` to run our tests. This class is provided by the Robolectric API. We also use the `@Config` annotation to tell Robolectric where to find the `AndroidManifest.xml` and resources of the app we are testing.
+
+[First Test][15]
+--
+
+Now we are ready to write a test. We will create an instance of `MainFragment` and start it using Robolectric.
+
+```java
+@Test
+public void testFragment() throws Exception {
+    Fragment fragment = new MainFragment();
+    startFragment(fragment);
+    assertNotNull(fragment);
+}
+```
+
+Note that we create the fragment directly from the constructor. If you have a `newInstance()` method, you can use it as well. This is helpful for more complex tests where `newInstance()` accepts parameters and creates an arguments `Bundle` for the fragment.
+
+[Second Test][16]
+--
+
+Next we will write a more complex test which checks the contents of the fragment.
+
+```java
+@Test
+public void testTextView() throws Exception {
+    Fragment fragment = new MainFragment();
+    startFragment(fragment);
+    assertNotNull(fragment);
+    View view = fragment.getView();
+    assertNotNull(view);
+    TextView hello = (TextView) view.findViewById(R.id.hello_text);
+    assertNotNull(hello);
+    assertEquals("Hello, Android!", hello.getText().toString());
+}
+```
+
+Here we check that the sole `TextView` in our fragment contains the message `"Hello, Android!"`.
+
 Conclusion
 ==
 
@@ -120,3 +184,6 @@ Conclusion
 [11]:https://github.com/codeguru42/robolectric-examples/blob/fragment-test/fragment-test/src/main/res/layout/activity_main.xml
 [12]:https://github.com/codeguru42/robolectric-examples/blob/fragment-test/fragment-test/src/main/java/codeguru/fragmenttest/MainFragment.java
 [13]:https://github.com/codeguru42/robolectric-examples/blob/fragment-test/fragment-test/src/main/res/layout/fragment_main.xml
+[14]:https://github.com/codeguru42/robolectric-examples/blob/fragment-test/fragment-test/build.gradle#L33-L35
+[15]:https://github.com/codeguru42/robolectric-examples/blob/fragment-test/fragment-test/src/test/java/codeguru/fragmenttest/FragmentUnitTest.java#L19-L24
+[16]:https://github.com/codeguru42/robolectric-examples/blob/fragment-test/fragment-test/src/test/java/codeguru/fragmenttest/FragmentUnitTest.java#L26-L36
