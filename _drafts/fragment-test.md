@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Testing a Fragment with Robolectric"
+title:  "Testing Fragments with Robolectric"
 tags: android testing unit-testing robolectric
 ---
 
