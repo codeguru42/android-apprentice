@@ -21,6 +21,7 @@ I have been collecting links to websites with programming problems and puzzles. 
 [Advent of Code 2016][13] - Save Christmas while you practice coding
 [IARCS Problem Archive][14] - Problems created by the Indian Association for Research in Computer Science
 [The Python Challenge][15] - Work your way through puzzles that require some thought beyond just learning to program
+[TripleByte][16] - Coding quiz
 
 [1]:http://projecteuler.net/
 [2]:http://www.codingame.com/cg/#!training
@@ -37,3 +38,4 @@ I have been collecting links to websites with programming problems and puzzles. 
 [13]:http://adventofcode.com/
 [14]:http://opc.iarcs.org.in/index.php/problems/
 [15]:http://www.pythonchallenge.com/
+[16]:https://triplebyte.com/?ref=quora_j17_c_wb
